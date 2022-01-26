@@ -9,7 +9,13 @@
       </article>
     </div>
     <br />
-
+    <div class="card-list">
+      <a v-for="card in cards" :key="card">
+        <Card :card="card" />
+      </a>
+      
+      </div>
+    
     <div>
    <button class="addbtn">ADD A NEW CARD</button>
     </div>

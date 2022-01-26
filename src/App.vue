@@ -27,6 +27,7 @@ export default {
     send(card){
       console.log(card)
       this.cards.push(card)
+      this.route= 'home'
     }
   },
   
@@ -38,7 +39,17 @@ export default {
   data() {
     return {
       route:"home",
-      cards:[],
+      cards:[
+                {
+          vendor: "bitcoin",
+          cardNumber: "XXXXX",
+          cardHolder: "MMMMMMMMM",
+          cardYear:"YYYYY",
+          cardCCV: "CCCCC",
+    
+      },
+      ],
+      
         }
       
   },

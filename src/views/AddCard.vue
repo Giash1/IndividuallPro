@@ -52,13 +52,13 @@
       <br />
       <label for="vendor">VENDOR</label>
       <select v-model="card.vendor" class="vendor-option" type="options">
-        <!-- <option value="vendor">Bitcoin Inc</option>
-        <option value="vendor">Block Chain Inc</option>
-        <option value="vendor">Evil Corp</option>
-        <option value="vendor">Ninja Bank</option> -->
-        <option v-for="vendor in vendors" :key="vendor.name" name="vendor" :value="vendor" >
+         <option value="bitcoin">Bitcoin Inc</option>
+        <option value="blockchain">Blockchain Inc</option>
+        <option value="evil">Evil Corp</option>
+        <option value="ninja">Ninja Bank</option>
+        <!-- <option v-for="vendor in vendors" :key="vendor.name" name="vendor" :value="vendor" >
           {{ vendor.name }}
-        </option>
+        </option> -->
       </select>
 
       <br />
@@ -77,7 +77,7 @@ export default {
   },
   methods:{
 addCard(){
- this.$emit('send', {...this.card})
+ this.$emit('send', this.card)
  console.log(this.card)
 }
   },
@@ -86,38 +86,12 @@ addCard(){
       
       card:
         {
-          vendor: [],
+          vendor: "",
           cardNumber: "",
           cardHolder: "",
           cardYear:"",
           cardCCV: "",
-        
-      vendors: [
-        {
-          name: "Bitcoin Inc",
-          backgroundColor:"blue",
-          fontColor: "white",
-          logo: require("../assets/bitcoin.svg"),
-        },
-        {
-          name: "Ninja Bank",
-          backgroundColor: "black",
-          fontColor: "white",
-          logo: require("../assets/ninja.svg"),
-        },
-        {
-          name: "Block Chain Inc",
-          backgroundColor: "green",
-          fontColor: "red",
-          logo: require("../assets/blockchain.svg"),
-        },
-        {
-          name: "Evil Corp",
-          backgroundColor: "grey",
-          fontColor: "white",
-          logo: require("../assets/evil.svg"),
-        },
-      ],
+    
       },
 
     };

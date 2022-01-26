@@ -1,10 +1,11 @@
 
 
 <template>
-  <div id="card">
+  <div id="card" :class="card.vendor">
     <div class="header">
       <div class="icon-one"><img src="../assets/wifi_white.svg" alt="" /></div>
       <div class="icon-two"><img src="../assets/chip.svg" alt="" /></div>
+      <img v-if="card.vendor" :src="require('../assets/'+card.vendor+'.svg')" alt="">
     </div>
     <div class="main">
       <p id="cardNumber">{{ card.cardNumber }}</p>
@@ -35,7 +36,10 @@ export default {
 #card {
   width: 350px;
   height: 200px;
-  background-color: rgba(67, 23, 223, 0.822);
+ 
+}
+.bitcoin{
+  background-color: gold;
 }
 .icon-one{
 text-align: start;
@@ -68,4 +72,5 @@ text-align: start;
   padding-top: 5px;
   
 }
+
 </style>
