@@ -24,13 +24,14 @@
         type="text"
         name="user-name"
         placeholder=""
+        maxlength="18"
       />
       <br />
      
       
       <div class="valid-thru">
         <span class="year">
-           <label for="year">Year</label>
+           <label for="year">EXPIRE DATE</label>
       <input class="year"
         v-model="card.cardYear"
         type="month"
@@ -39,7 +40,7 @@
       />
         </span>
 
-         <span class="cvc">
+         <!-- <span class="cvc">
           <label for="cvc">CCV</label>
       <input class="cardcvc"
         v-model="card.cardCCV"
@@ -47,7 +48,7 @@
         name=""
         placeholder=""
       />
-           </span> 
+           </span>  -->
       </div>
       <br />
       <label for="vendor">VENDOR</label>
@@ -62,7 +63,9 @@
       </select>
 
       <br />
+      
       <button class="addbtn" type="submit">ADD CARD</button>
+      
     </form>
   </div>
 </template>
@@ -90,7 +93,7 @@ addCard(){
           cardNumber: "",
           cardHolder: "",
           cardYear:"",
-          cardCCV: "",
+          
     
       },
 
@@ -117,6 +120,7 @@ input {
   height: 30px;
   text-align: center;
   font-size: 1.1rem;
+  letter-spacing: 0.2rem;
 }
 
 .valid-thru {
@@ -124,7 +128,7 @@ input {
   width: 200px;
 }
 input.year{
-  width: 200px;
+  width: 350px;
 }
 input.cardcvc{
 width: 150px;
@@ -142,15 +146,17 @@ width: 150px;
   margin-right: 15px;
 }
 .vendor-option {
-  width: 300px;
+  width: 350px;
   height: 30px;
   text-align: center;
   font-size: 1.1rem;
 }
 .addbtn {
-  width: 300px;
-  height: 30px;
-  background-color: grey;
-  color: white;
+  margin: 0;
+  position: absolute;
+  transform: translateY(280px);
+  width: 350px;
+  background-color: black;
+
 }
 </style>
