@@ -66,7 +66,6 @@ text-align: start;
   letter-spacing: 0.2rem;
   align-items: flex-start;
   padding-top: 10px;
-
   font-size: 20px;
   position: absolute;
   transform: translateY(-70px);
