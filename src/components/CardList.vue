@@ -7,6 +7,7 @@
     >
     <img class ="chip-logo" src="../assets/chip.svg" alt/>
     <img class = "vendor" src="../assets/bitcoin.svg" alt="">
+     <img class = "vendor" src="../assets/bitcoin.svg" alt="">
 
     </article>
   </section>
