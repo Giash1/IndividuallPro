@@ -4,26 +4,33 @@
   <div id="card" :class="card.vendor">
     <div class="header">
       <div>
-      <div class="icon-one"><img src="../assets/wifi_white.svg" alt="" /></div>
-      <div><img src="../assets/chip.svg" alt="" /></div>
-     </div>
+        <div class="icon-one">
+          <img src="../assets/wifi_white.svg" alt="" />
+        </div>
+        <div><img src="../assets/chip.svg" alt="" /></div>
+      </div>
       <div>
-        <img v-if="card.vendor" :src="require('../assets/'+card.vendor+'.svg')" alt="">
+        <img
+          v-if="card.vendor"
+          :src="require('../assets/' + card.vendor + '.svg')"
+          alt=""
+        />
       </div>
     </div>
-    
+
     <div class="main">
-      <div id="cardNumber">{{ card.cardNumber }}</div>
+      <p v-if="card.cardNumber">{{ spaceNumber }}</p>
+      <p v-else>XXXXXXXXXXXXX</p>
     </div>
     <div class="footer">
-      <div>
-      <p class="holdername">CARDHOLDER NAME</p>
-      <p id="cardHolder">{{ card.cardHolder }}</p>
-       </div>
-       <div>
-      <div class="cardvalid">VALID THRU</div>
-   <div id="expireMonth">{{ card.cardYear }}</div>  
-    </div>
+      <div class="cardholder">
+        <p>CARDHOLDER NAME</p>
+        <p>{{ card.cardHolder }}</p>
+      </div>
+      <div class="validthru">
+        <p>VALID THRU</p>
+        <p>{{ date }}</p>
+      </div>
     </div>
   </div>
 </template>
@@ -35,9 +42,25 @@ export default {
   },
   props: ["card"],
   computed: {
-    expireDate() {
-      return {};
+    spaceNumber() {
+      return (
+        this.card.cardNumber.slice(0, 4) +
+        " " +
+        this.card.cardNumber.slice(4, 8) +
+        " " +
+        this.card.cardNumber.slice(8, 12) +
+        " " +
+        this.card.cardNumber.slice(12, 16)
+      );
     },
+    date(){
+      return(
+        this.card.cardYear.slice(5,7) + 
+        "/" + 
+        this.card.cardYear.slice(2,4) 
+
+      )
+    }
   },
 };
 </script>
@@ -46,38 +69,40 @@ export default {
 #card {
   width: 350px;
   height: 200px;
+  border: 0.2px snow
+  
 }
 
-.bitcoin{
+.bitcoin {
   background-color: gold;
 }
-.blockchain{
+.blockchain {
   background-color: rgba(200, 219, 22, 0.925);
 }
-.evil{
+.evil {
   background-color: rgb(62, 202, 19);
 }
-.ninja{
+.ninja {
   background-color: rgb(116, 8, 98);
 }
-.icon-one{
-text-align: start;
+.icon-one {
+  text-align: start;
 }
-.header{
-  display:flex;
+.header {
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.main{
-   display: flex;
+.main {
+  display: flex;
   flex-direction: row;
-justify-content: space-between;
+  justify-content: space-between;
   align-items: flex-start;
 }
-.footer{
+.footer {
   display: flex;
-  
-  justify-content: space-around;
+flex-direction: row;
+  justify-content: space-between;
   align-items: flex-end;
 }
 
@@ -111,6 +136,4 @@ justify-content: space-between;
   font-weight: bold;
   transform: translateY(-55px);
 } */
-
-
 </style>

@@ -5,29 +5,35 @@
       <br />
       <article>
         <p>ACTIVE CARD</p>
-        <div class="active"></div>
+      <Card :card="activeCard"/>
       </article>
     </div>
     <br />
     <div class="card-list">
-      <a v-for="card in cards" :key="card">
+      <a @click="activeCard=card" v-for="card in cards" :key="card.card"> 
         <Card :card="card" />
       </a>
       
       </div>
     
     <div>
-   <button class="addbtn">ADD A NEW CARD</button>
+   <button @click="$emit('show')" class="addbtn">ADD A NEW CARD</button>
     </div>
   </section>
+  
 </template>
 
 <script>
-
+import Card from "../components/Card.vue";
 export default {
   components: {
-   
+   Card,
 
+  },
+  data() {
+    return {
+      activeCard:this.cards[0]
+    }
   },
   props:["cards"],
 
@@ -59,5 +65,8 @@ form {
   height:40px;
   color:white;
   font-size: 1.2rem;
+}
+.cardlist{
+  
 }
 </style>
