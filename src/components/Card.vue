@@ -3,20 +3,27 @@
 <template>
   <div id="card" :class="card.vendor">
     <div class="header">
+      <div>
       <div class="icon-one"><img src="../assets/wifi_white.svg" alt="" /></div>
-      <div class="icon-two"><img src="../assets/chip.svg" alt="" /></div>
-      <img v-if="card.vendor" :src="require('../assets/'+card.vendor+'.svg')" alt="">
+      <div><img src="../assets/chip.svg" alt="" /></div>
+     </div>
+      <div>
+        <img v-if="card.vendor" :src="require('../assets/'+card.vendor+'.svg')" alt="">
+      </div>
     </div>
+    
     <div class="main">
-      
-      <p id="cardNumber">{{ card.cardNumber }}</p>
-      <p class="holdername">CARDHOLDER NAME</p>
-      <p id="cardHolder">{{ card.cardHolder }}</p>
+      <div id="cardNumber">{{ card.cardNumber }}</div>
     </div>
     <div class="footer">
-      <p class="cardvalid">VALID THRU</p>
-      <p id="expireMonth">{{ card.cardYear }}</p>
-      
+      <div>
+      <p class="holdername">CARDHOLDER NAME</p>
+      <p id="cardHolder">{{ card.cardHolder }}</p>
+       </div>
+       <div>
+      <div class="cardvalid">VALID THRU</div>
+   <div id="expireMonth">{{ card.cardYear }}</div>  
+    </div>
     </div>
   </div>
 </template>
@@ -39,10 +46,8 @@ export default {
 #card {
   width: 350px;
   height: 200px;
-  
-  
- 
 }
+
 .bitcoin{
   background-color: gold;
 }
@@ -58,10 +63,25 @@ export default {
 .icon-one{
 text-align: start;
 }
-.icon-two{
-  text-align: start;
+.header{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
-#cardNumber {
+.main{
+   display: flex;
+  flex-direction: row;
+justify-content: space-between;
+  align-items: flex-start;
+}
+.footer{
+  display: flex;
+  
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+/* #cardNumber {
   width: 300px;
   letter-spacing: 0.2rem;
   align-items: flex-start;
@@ -84,23 +104,13 @@ text-align: start;
   font-weight: bold;
   position: absolute;
   transform: translateY(-15px);
-}
-.cardvalid{
+} */
+/* .cardvalid{
   text-align: right;
   opacity: 100%;
   font-weight: bold;
-  transform: translateY(-60px);
-}
-#expireMonth{
-  text-align: right;
-  padding-bottom: 3px;
   transform: translateY(-55px);
-}
-#ccv{
-  text-align: right;
-  padding-bottom: 0px;
-  
-  
-}
+} */
+
 
 </style>
