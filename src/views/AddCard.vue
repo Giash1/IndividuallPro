@@ -1,11 +1,16 @@
 <template>
   <div class="full-view">
+     <div class="e-wallet">
+      <h1>ADD A NEW <p> BANK CARD</p></h1>
+      <br />
+      <article>
+        <p>NEW CARD</p>
+      <Card :card="activeCard"/>
+      </article>
+    </div>
     <div class="card">
       <Card :card="card" />
-      
-      
-      
-    </div>
+       </div>
     <br />
     <br />
     <form @submit.prevent="addCard">

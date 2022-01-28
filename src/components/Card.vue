@@ -20,18 +20,18 @@
 
     <div class="main">
       <p v-if="card.cardNumber">{{ spaceNumber }}</p>
-      <p v-else>XXXXXXXXXXXXXXXX</p>
+      <p v-else> XXXX  XXXX  XXXX  XXXX</p>
     </div>
     <div class="footer">
       <div class="cardholder">
         <p>CARDHOLDER NAME</p>
         <p v-if="card.cardHolder">{{ card.cardHolder }}</p>
-        <p v-else>FIRSTNAME LASTNAME</p>
+        <p class="firstname" v-else>FIRSTNAME LASTNAME</p>
       </div>
       <div class="validthru">
         <p>VALID THRU</p>
-        <p v-if="card.Year">{{ date }}</p>
-        <p v-else>MM/YY</p>
+        <p v-if="card.cardYear">{{ date }}</p>
+        <p class="mm" v-else>MM/YY</p>
       </div>
     </div>
   </div>
@@ -110,50 +110,45 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  color: black;
 }
 .main {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
+  padding-top: 5px;
+  width: 100%;
 }
 .footer {
   display: flex;
 flex-direction: row;
   justify-content: space-between;
-
   position: relative;
+  padding-top: 25px;
 }
-
-/* #cardNumber {
-  width: 300px;
-  letter-spacing: 0.2rem;
+.cardholder{
+  display: flex;
+  padding-left: 0px;
   align-items: flex-start;
-  padding-top: 10px;
-  font-size: 20px;
-  position: absolute;
-  transform: translateY(-70px);
+  flex-direction: column;
+  font-family: "PT Mono", monospace;
+  font-weight: 100;
+  font-size: 12px;
 }
- #cardHolder {
-  width: 300px;
-  text-align: left;
-  align-items: center;
-  padding-top: 20px;
-  font-size: 20px;
-  transform: translateY(-10px); 
-  position: absolute;
+.firstname{
+  color:black;
 }
-.holdername{
-  text-align: left;
-  opacity: 100%;
-  font-weight: bold;
-  position: absolute;
-  transform: translateY(-15px);
+ .validthru{
+  display: flex;
+  padding-left: 0px;
+  align-items: flex-start;
+  flex-direction: column;
+  font-family: "PT Mono", monospace;
+  font-weight: 100;
+  font-size: 12px;
 } 
- .cardvalid{
-  text-align: right;
-  opacity: 100%;
-  font-weight: bold;
-  transform: translateY(-55px);
-} */
+.mm{
+  color:black;
+}
 </style>

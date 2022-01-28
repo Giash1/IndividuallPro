@@ -80,30 +80,5 @@ section {
 
 
 
-/* div .card-list:nth-child(1){
-
-  position:relative;
-}
-div .card-list:nth-child(2){
-
-  position: absolute;
-   transform: translateY(25%);
-}
-div .card-list:nth-child(3){
-    border:1px solid blue;
-  position: relative;
-   transform: translateY(5%);
-
-}
-.card-list:nth-child(4){
-  position: absolute;
-   transform: translateY(75%);
-}
-.card-list:nth-child(5){
-  position: absolute;
-   transform: translateY(100%);
-} */
-
-
 
 </style>
