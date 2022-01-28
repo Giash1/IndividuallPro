@@ -108,7 +108,7 @@ addCard(){
 }
 .card {
   width: 382px;
-  height: 255px;
+  height: 241px;
   background-color: #D6D6D6;
   border-radius: 10px;
 }

@@ -78,6 +78,8 @@ section {
   transform: translateY(-240%);
 }
 
+
+
 /* div .card-list:nth-child(1){
 
   position:relative;
