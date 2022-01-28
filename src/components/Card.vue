@@ -20,12 +20,13 @@
 
     <div class="main">
       <p v-if="card.cardNumber">{{ spaceNumber }}</p>
-      <p v-else>XXXXXXXXXXXXX</p>
+      <p v-else>XXXXXXXXXXXXXXXX</p>
     </div>
     <div class="footer">
       <div class="cardholder">
         <p>CARDHOLDER NAME</p>
-        <p>{{ card.cardHolder }}</p>
+        <p v-if="card.cardHolder">{{ card.cardHolder }}</p>
+        <p v-else>{{</p>
       </div>
       <div class="validthru">
         <p>VALID THRU</p>
@@ -53,6 +54,7 @@ export default {
         this.card.cardNumber.slice(12, 16)
       );
     },
+   
     date(){
       return(
         this.card.cardYear.slice(5,7) + 
@@ -67,23 +69,28 @@ export default {
 
 <style scoped>
 #card {
-  width: 350px;
   height: 200px;
-  border: 0.2px snow
+  width:350;
+  border: 0.2px snow;
+  border-radius: 1rem;
+  padding: 1.4rem;
+  color: whitesmoke;
+  font-family: "PT Mono", monospace;
   
 }
 
 .bitcoin {
-  background-color: gold;
+  background-color: #ffae34;
 }
 .blockchain {
-  background-color: rgba(200, 219, 22, 0.925);
+  background-color: #8b58f9;
 }
 .evil {
-  background-color: rgb(62, 202, 19);
+  background-color: #f33355;
 }
 .ninja {
-  background-color: rgb(116, 8, 98);
+  background-color: #222222;
+  color: white;
 }
 .icon-one {
   text-align: start;
@@ -103,7 +110,8 @@ export default {
   display: flex;
 flex-direction: row;
   justify-content: space-between;
-  align-items: flex-end;
+
+  position: relative;
 }
 
 /* #cardNumber {
@@ -115,13 +123,14 @@ flex-direction: row;
   position: absolute;
   transform: translateY(-70px);
 }
-#cardHolder {
+ #cardHolder {
   width: 300px;
   text-align: left;
   align-items: center;
   padding-top: 20px;
   font-size: 20px;
-  transform: translateY(-10px);
+  transform: translateY(-10px); 
+  position: absolute;
 }
 .holdername{
   text-align: left;
@@ -129,8 +138,8 @@ flex-direction: row;
   font-weight: bold;
   position: absolute;
   transform: translateY(-15px);
-} */
-/* .cardvalid{
+} 
+ .cardvalid{
   text-align: right;
   opacity: 100%;
   font-weight: bold;

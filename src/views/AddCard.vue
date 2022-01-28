@@ -102,21 +102,22 @@ addCard(){
 };
 </script>
 
-<style scoped >
+<style scoped>
 .full-view {
   margin: auto;
 }
 .card {
-  width: 350px;
-  height: 200px;
-  background-color: #aaa;
+  width: 382px;
+  height: 255px;
+  background-color: #D6D6D6;
+  border-radius: 10px;
 }
 form {
   display: flex;
   flex-direction: column;
 }
 input {
-  width: 350px;
+  width: 382px;
   height: 30px;
   text-align: center;
   font-size: 1.1rem;
@@ -128,7 +129,7 @@ input {
   width: 200px;
 }
 input.year{
-  width: 350px;
+  width: 382px;
 }
 input.cardcvc{
 width: 150px;
@@ -146,7 +147,7 @@ width: 150px;
   margin-right: 15px;
 }
 .vendor-option {
-  width: 350px;
+  width: 382px;
   height: 30px;
   text-align: center;
   font-size: 1.1rem;
@@ -155,8 +156,11 @@ width: 150px;
   margin: 0;
   position: absolute;
   transform: translateY(280px);
-  width: 350px;
+  width: 382px;
+  color: white;
   background-color: black;
+  font-family: "PT Mono", monospace;
+  font-weight: bold;
 
 }
 </style>

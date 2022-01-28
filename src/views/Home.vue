@@ -13,7 +13,6 @@
       <a @click="activeCard=card" v-for="card in cards" :key="card.card"> 
         <Card :card="card" />
       </a>
-      
       </div>
     
     <div>
@@ -41,32 +40,57 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 section {
   margin: auto;
-  padding: 10px;
-  height: auto;
+  
+  max-height: 600px;
   align-items: center;
   text-align: center;
+  position: relative;
+  width: 350px;
 }
-.active {
-  height: 200px;
-  width: 300px;
-  background: grey;
-  padding-left: 400px;
-}
-form {
-  margin-left: 0px;
-  text-align: start;
-}
+
 .addbtn {
-  background-color: green;
-  width:300px;
-  height:40px;
-  color:white;
+  background-color:white;
+  width:350px;
+  height:60px;
+  color:black;
   font-size: 1.2rem;
-}
-.cardlist{
+   transform: translateY(20rem);
+   position: relative;
+   border-radius: 20px;
   
 }
+.card-list{
+  width: 358px;
+ position:relative;
+  
+  
+}
+div .card-list:nth-child(1){
+  border:1px;
+ transform: translateY(50px);
+  position:relative;
+}
+div .card-list:nth-child(2){
+
+  position: relative;
+   transform: translateY(5%);
+}
+div .card-list:nth-child(3){
+  position: relative;
+   transform: translateY(5%);
+}
+.card-list:nth-child(4){
+  position: relative;
+   transform: translateY(5%);
+}
+.card-list:nth-child(5){
+  position: relative;
+   transform: translateY(5%);
+}
+
+
+
 </style>
