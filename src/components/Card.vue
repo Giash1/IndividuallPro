@@ -65,10 +65,10 @@ export default {
       )
     },
     chip(){
-      if (this.card.vendor)
+     if (this.vendor)
       return "chipWhite" 
       return ""
-    }
+   }
 
   },
 };
