@@ -26,11 +26,12 @@
       <div class="cardholder">
         <p>CARDHOLDER NAME</p>
         <p v-if="card.cardHolder">{{ card.cardHolder }}</p>
-        <p v-else>{{</p>
+        <p v-else>FIRSTNAME LASTNAME</p>
       </div>
       <div class="validthru">
         <p>VALID THRU</p>
-        <p>{{ date }}</p>
+        <p v-if="card.Year">{{ date }}</p>
+        <p v-else>MM/YY</p>
       </div>
     </div>
   </div>
@@ -69,7 +70,7 @@ export default {
 
 <style scoped>
 #card {
-  height: 200px;
+  height: 241px;
   width:350;
   border: 0.2px snow;
   border-radius: 1rem;

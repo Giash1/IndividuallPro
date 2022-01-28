@@ -10,7 +10,7 @@
     </div>
     <br />
     <div class="card-list">
-      <a @click="activeCard=card" v-for="card in cards" :key="card.card"> 
+      <a class="card-item" @click="activeCard=card" v-for="card in cards" :key="card.card"> 
         <Card :card="card" />
       </a>
       </div>
@@ -43,14 +43,11 @@ export default {
 <style scoped>
 section {
   margin: auto;
-  
-  max-height: 600px;
   align-items: center;
   text-align: center;
   position: relative;
-  width: 350px;
-}
 
+}
 .addbtn {
   background-color:white;
   width:350px;
@@ -63,33 +60,47 @@ section {
   
 }
 .card-list{
-  width: 358px;
- position:relative;
-  
-  
+  width: 100%;
+ display: flex;
+ flex-direction: column;
 }
-div .card-list:nth-child(1){
-  border:1px;
- transform: translateY(50px);
+.card-item{
+  width: 100%;
+  align-content: flex-start;
+}
+.card-item:nth-of-type(2){
+  transform: translateY(-80%);
+}
+.card-item:nth-of-type(3){
+  transform: translateY(-160%);
+}
+.card-item:nth-of-type(4){
+  transform: translateY(-240%);
+}
+
+/* div .card-list:nth-child(1){
+
   position:relative;
 }
 div .card-list:nth-child(2){
 
-  position: relative;
-   transform: translateY(5%);
+  position: absolute;
+   transform: translateY(25%);
 }
 div .card-list:nth-child(3){
+    border:1px solid blue;
   position: relative;
    transform: translateY(5%);
+
 }
 .card-list:nth-child(4){
-  position: relative;
-   transform: translateY(5%);
+  position: absolute;
+   transform: translateY(75%);
 }
 .card-list:nth-child(5){
-  position: relative;
-   transform: translateY(5%);
-}
+  position: absolute;
+   transform: translateY(100%);
+} */
 
 
 
