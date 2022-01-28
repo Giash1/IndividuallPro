@@ -42,10 +42,10 @@ export default {
       cards:[
                 {
           vendor: "bitcoin",
-          cardNumber: "XXXXX",
-          cardHolder: "MMMMMMMMM",
-          cardYear:"YYYYY",
-          cardCCV: "CCCCC",
+          cardNumber: "4676098709876543",
+          cardHolder: "DANIEL MURI",
+          cardYear:"2022/01",
+          cardCCV: "",
     
       },
       ],

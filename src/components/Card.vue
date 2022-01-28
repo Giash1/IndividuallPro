@@ -40,7 +40,10 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+
+    };
+
   },
   props: ["card"],
   computed: {
@@ -54,6 +57,7 @@ export default {
         " " +
         this.card.cardNumber.slice(12, 16)
       );
+
     },
    
     date(){
@@ -65,7 +69,7 @@ export default {
       )
     },
     chip(){
-     if (this.vendor)
+     if (this.card.vendor)
       return "chipWhite" 
       return ""
    }

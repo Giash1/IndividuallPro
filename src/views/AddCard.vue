@@ -136,12 +136,8 @@ input {
 input.year{
   width: 382px;
 }
-input.cardcvc{
-width: 150px;
-}
 
-
-.month select {
+/* .month select {
   width: 140px;
   height: 30px;
   text-align: center;
@@ -150,7 +146,7 @@ width: 150px;
   width: 140px;
   height: 30px;
   margin-right: 15px;
-}
+} */
 .vendor-option {
   width: 382px;
   height: 30px;
