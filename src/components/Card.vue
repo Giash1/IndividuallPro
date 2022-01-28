@@ -7,7 +7,7 @@
         <div class="icon-one">
           <img src="../assets/wifi_white.svg" alt="" />
         </div>
-        <div><img src="../assets/chip.svg" alt="" /></div>
+        <div :class="chip"><img src= "../assets/chip.svg" alt=""/></div>
       </div>
       <div>
         <img
@@ -63,7 +63,13 @@ export default {
         this.card.cardYear.slice(2,4) 
 
       )
+    },
+    chip(){
+      if (this.card.vendor)
+      return "chipWhite" 
+      return ""
     }
+
   },
 };
 </script>
@@ -73,13 +79,17 @@ export default {
   height: 241px;
   width:350;
   border: 0.2px snow;
-  border-radius: 1rem;
+  border-radius: 10px;
   padding: 1.4rem;
   color: whitesmoke;
   font-family: "PT Mono", monospace;
   
 }
-
+.chipWhite{
+  background-color: white;
+  border-radius: 8px;
+  height: 40px;
+}
 .bitcoin {
   background-color: #ffae34;
 }
